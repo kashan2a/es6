@@ -337,6 +337,7 @@ function Inheritance(a, b, c) {
     this.c = c;
 }
 
+Inheritance.prototype.constructor = Inheritance;
 Inheritance.prototype = Object.create(Func.prototype);
 Inheritance.prototype.getProduct = function() {
     return this.a * this.b * this.c;
