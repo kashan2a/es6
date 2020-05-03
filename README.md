@@ -47,12 +47,12 @@ ES6 introduced the `let` keyword, which allows for block-scoped variables which 
 
 ```js
 // ES5
-var x = 0;
+var x = 0
 ```
 
 ```js
-// ES6 
-let x = 0;
+// ES6
+let x = 0
 ```
 
 - [MDN Reference: let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
@@ -63,7 +63,7 @@ ES6 introduced the `const` keyword, which cannot be redeclared or reassigned, bu
 
 ```js
 // ES6
-const CONST_IDENTIFIER = 0; // constants are uppercase by convention
+const CONST_IDENTIFIER = 0 // constants are uppercase by convention
 ```
 
 - [MDN Reference: const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
@@ -74,13 +74,13 @@ The arrow function expression syntax is a shorter way of creating a function exp
 
 ```js
 // ES5
-function func(a, b, c) {}        // function declaration
-var func = function(a, b, c) {}  // function expression
+function func(a, b, c) {} // function declaration
+var func = function (a, b, c) {} // function expression
 ```
 
 ```js
 // ES6
-let func = a => {}         // parentheses optional with one parameter
+let func = a => {} // parentheses optional with one parameter
 let func = (a, b, c) => {} // parentheses required with multiple parameters
 ```
 
@@ -94,32 +94,30 @@ Expressions can be embedded in template literal strings.
 
 ```js
 // ES5
-var str = 'Release date: ' + date;
+var str = 'Release date: ' + date
 ```
 
 ```js
 // ES6
-let str = `Release Date: ${date}`;
+let str = `Release Date: ${date}`
 ```
 
 - [MDN Reference: Expression interpolation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Expression_interpolation)
 
 ### Multi-line strings
 
-Using template literal syntax, a JavaScript string can span multiple lines without the need for concatenation. 
+Using template literal syntax, a JavaScript string can span multiple lines without the need for concatenation.
 
 ```js
 // ES5
-var str = 'This text ' +
-          'is on ' +
-          'multiple lines';
+var str = 'This text ' + 'is on ' + 'multiple lines'
 ```
 
 ```js
 // ES6
 let str = `This text
            is on
-           multiple lines`;        
+           multiple lines`
 ```
 
 - [MDN Reference: Multi-line strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Multi-line_strings)
@@ -130,33 +128,35 @@ The `return` keyword is implied and can be omitted if using arrow functions with
 
 ```js
 // ES5
-function func(a, b, c) { return a + b + c; } 
+function func(a, b, c) {
+  return a + b + c
+}
 ```
 
 ```js
 // ES6
-let func = (a, b, c) => a + b + c; // curly brackets must be omitted
+let func = (a, b, c) => a + b + c // curly brackets must be omitted
 ```
 
 - [MDN Reference: Function body](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#Function_body)
 
 ## Key/property shorthand
 
-ES6 introduces a shorter notation for assigning properties to variables of the same name. 
+ES6 introduces a shorter notation for assigning properties to variables of the same name.
 
 ```js
 // ES5
-var obj = { 
-    a: a, 
-    b: b
+var obj = {
+  a: a,
+  b: b,
 }
 ```
 
 ```js
 // ES6
-let obj = { 
-    a, 
-    b
+let obj = {
+  a,
+  b,
 }
 ```
 
@@ -169,43 +169,43 @@ The `function` keyword can be omitted when assigning methods on an object.
 ```js
 // ES5
 var obj = {
-    a: function(c, d) {},
-    b: function(e, f) {}
-};
+  a: function (c, d) {},
+  b: function (e, f) {},
+}
 ```
 
 ```js
 // ES6
 let obj = {
-    a(c, d) {},
-    b(e, f) {}
+  a(c, d) {},
+  b(e, f) {},
 }
 ```
 
 ```js
-obj.a(); // call method a
+obj.a() // call method a
 ```
 
 - [MDN Reference: Method definitions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions)
 
 ## Destructuring
 
-Use curly brackets to assign properties of an object to their own variable. 
+Use curly brackets to assign properties of an object to their own variable.
 
 ```js
-var obj = { a: 1, b: 2, c: 3 };
+var obj = { a: 1, b: 2, c: 3 }
 ```
 
 ```js
 // ES5
-var a = obj.a;
-var b = obj.b;
-var c = obj.c;
+var a = obj.a
+var b = obj.b
+var c = obj.c
 ```
 
 ```js
 // ES6
-let {a, b, c} = obj;
+let { a, b, c } = obj
 ```
 
 - [MDN Reference: Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015)
@@ -215,20 +215,20 @@ let {a, b, c} = obj;
 A more concise syntax has been introduced for iteration through arrays and other iterable objects.
 
 ```js
-var arr = ['a', 'b', 'c'];
+var arr = ['a', 'b', 'c']
 ```
 
 ```js
 // ES5
 for (var i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
+  console.log(arr[i])
 }
 ```
 
 ```js
 // ES6
 for (let i of arr) {
-    console.log(i);
+  console.log(i)
 }
 ```
 
@@ -240,21 +240,21 @@ Functions can be initialized with default parameters, which will be used only if
 
 ```js
 // ES5
-var func = function(a, b) {
-    b = (b === undefined) ? 2 : b;
-    return a + b;
+var func = function (a, b) {
+  b = b === undefined ? 2 : b
+  return a + b
 }
 ```
 
 ```js
 // ES6
 let func = (a, b = 2) => {
-    return a + b;
+  return a + b
 }
 ```
 
 ```js
-func(10);   // returns 12
+func(10) // returns 12
 func(10, 5) // returns 15
 ```
 
@@ -266,11 +266,11 @@ Spread syntax can be used to expand an array.
 
 ```js
 // ES6
-let arr1 = [1, 2, 3];
-let arr2 = ['a', 'b', 'c'];
-let arr3 = [...arr1, ...arr2];
+let arr1 = [1, 2, 3]
+let arr2 = ['a', 'b', 'c']
+let arr3 = [...arr1, ...arr2]
 
-console.log(arr3); // [1, 2, 3, "a", "b", "c"]
+console.log(arr3) // [1, 2, 3, "a", "b", "c"]
 ```
 
 Spread syntax can be used for function arguments.
@@ -280,7 +280,7 @@ Spread syntax can be used for function arguments.
 let arr1 = [1, 2, 3];
 let func = (a, b, c) => a + b + c;
 
-console.log(func(...arr1);); // 6 
+console.log(func(...arr1);); // 6
 ```
 
 - [MDN Reference: Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
@@ -292,35 +292,35 @@ ES6 introducess the `class` syntax on top of the prototype-based constructor fun
 ```js
 // ES5
 function Func(a, b) {
-    this.a = a;
-    this.b = b;
+  this.a = a
+  this.b = b
 }
 
-Func.prototype.getSum = function() {
-    return this.a + this.b;
+Func.prototype.getSum = function () {
+  return this.a + this.b
 }
 
-var x = new Func(3, 4);
+var x = new Func(3, 4)
 ```
 
 ```js
 // ES6
 class Func {
-    constructor(a, b) {
-        this.a = a;
-        this.b = b;
-    }
+  constructor(a, b) {
+    this.a = a
+    this.b = b
+  }
 
-    getSum() {
-        return this.a + this.b;
-    }
+  getSum() {
+    return this.a + this.b
+  }
 }
 
-let x = new Func(3, 4);
+let x = new Func(3, 4)
 ```
 
 ```js
-x.getSum(); // returns 7
+x.getSum() // returns 7
 ```
 
 - [MDN Reference: Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
@@ -332,39 +332,39 @@ The `extends` keyword creates a subclass.
 ```js
 // ES5
 function Inheritance(a, b, c) {
-    Func.call(this, a, b);
+  Func.call(this, a, b)
 
-    this.c = c;
+  this.c = c
 }
 
-Inheritance.prototype.constructor = Inheritance;
-Inheritance.prototype = Object.create(Func.prototype);
-Inheritance.prototype.getProduct = function() {
-    return this.a * this.b * this.c;
+Inheritance.prototype.constructor = Inheritance
+Inheritance.prototype = Object.create(Func.prototype)
+Inheritance.prototype.getProduct = function () {
+  return this.a * this.b * this.c
 }
 
-var y = new Inheritance(3, 4, 5);
+var y = new Inheritance(3, 4, 5)
 ```
 
 ```js
 // ES6
 class Inheritance extends Func {
-    constructor(a, b, c) {
-        super(a, b);
+  constructor(a, b, c) {
+    super(a, b)
 
-        this.c = c;
-    }
+    this.c = c
+  }
 
-    getProduct() {
-        return this.a * this.b * this.c;
-    }
+  getProduct() {
+    return this.a * this.b * this.c
+  }
 }
 
-let y = new Inheritance(3, 4, 5);
+let y = new Inheritance(3, 4, 5)
 ```
 
 ```js
-y.getProduct(); // 60
+y.getProduct() // 60
 ```
 
 - [MDN Reference: Subclassing with extends](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#Sub_classing_with_extends)
@@ -381,18 +381,18 @@ Modules can be created to export and import code between files.
 
 ```js
 // export.js
-let func = a => a + a;
-let obj = {};
-let x = 0;
+let func = a => a + a
+let obj = {}
+let x = 0
 
-export { func, obj, x };
+export { func, obj, x }
 ```
 
 ```js
 // import.js
-import { func, obj, x } from './export.js';
+import { func, obj, x } from './export.js'
 
-console.log(func(3), obj, x);
+console.log(func(3), obj, x)
 ```
 
 - [MDN Reference: export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
@@ -405,35 +405,35 @@ Promises represent the completion of an asynchronous function. They can be used 
 ```js
 // ES5 callback
 function doSecond() {
-    console.log('Do second.');
+  console.log('Do second.')
 }
 
 function doFirst(callback) {
-    setTimeout(function() {
-        console.log('Do first.');
+  setTimeout(function () {
+    console.log('Do first.')
 
-        callback();
-    }, 500);
+    callback()
+  }, 500)
 }
 
-doFirst(doSecond);
+doFirst(doSecond)
 ```
 
 ```js
 // ES6 Promise
 let doSecond = () => {
-    console.log('Do second.');
+  console.log('Do second.')
 }
 
 let doFirst = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        console.log('Do first.');
-        
-        resolve();
-    }, 500);
-});
-  
-doFirst.then(doSecond);
+  setTimeout(() => {
+    console.log('Do first.')
+
+    resolve()
+  }, 500)
+})
+
+doFirst.then(doSecond)
 ```
 
 An example below using `XMLHttpRequest`, for demonstrative purposes only ([Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) would be the proper modern API to use).
@@ -441,48 +441,47 @@ An example below using `XMLHttpRequest`, for demonstrative purposes only ([Fetch
 ```js
 // ES5 callback
 function makeRequest(method, url, callback) {
-    var request = new XMLHttpRequest();
+  var request = new XMLHttpRequest()
 
-    request.open(method, url);
-    request.onload = function() {
-        callback(null, request.response);
-    };
-    request.onerror = function() {
-        callback(request.response);
-    };
-    request.send();
+  request.open(method, url)
+  request.onload = function () {
+    callback(null, request.response)
+  }
+  request.onerror = function () {
+    callback(request.response)
+  }
+  request.send()
 }
 
 makeRequest('GET', 'https://url.json', function (err, data) {
-        if (err) { 
-            throw new Error(err);
-        } else {
-            console.log(data);
-        }
-    }
-);
+  if (err) {
+    throw new Error(err)
+  } else {
+    console.log(data)
+  }
+})
 ```
 
 ```js
 // ES6 Promise
 function makeRequest(method, url) {
-    return new Promise((resolve, reject) => {
-        let request = new XMLHttpRequest();
+  return new Promise((resolve, reject) => {
+    let request = new XMLHttpRequest()
 
-        request.open(method, url);
-        request.onload = resolve;
-        request.onerror = reject;
-        request.send();
-    });
+    request.open(method, url)
+    request.onload = resolve
+    request.onerror = reject
+    request.send()
+  })
 }
 
 makeRequest('GET', 'https://url.json')
-.then(event => {
-    console.log(event.target.response);
-})
-.catch(err => {
-    throw new Error(err);
-});
+  .then(event => {
+    console.log(event.target.response)
+  })
+  .catch(err => {
+    throw new Error(err)
+  })
 ```
 
 - [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
