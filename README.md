@@ -59,7 +59,7 @@ let x = 0
 
 ## Constant declaration
 
-ES6 introduced the `const` keyword, which cannot be redeclared or reassigned, but is not immutable.
+ES6 introduced the `const` keyword, which cannot be redeclared or reassigned, but it is not immutable.
 
 ```js
 // ES6
